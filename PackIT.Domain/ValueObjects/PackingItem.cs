@@ -1,0 +1,28 @@
+﻿using PackIT.Domain.Exceptions;
+
+namespace PackIT.Domain.ValueObjects;
+
+
+/// <summary>
+///     Represents an item that added to a packing list.
+/// </summary>
+public record PackingItem
+{
+    
+
+    public string Name { get; }
+    public uint Quantity { get; }
+    public bool IsPacked { get; }
+
+    public PackingItem(string name, uint quantity, bool isPacked)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            throw new EmptyPackingListItemNameException();
+        }
+
+        Name = name;
+        Quantity = quantity;
+        IsPacked = isPacked;
+    }
+}

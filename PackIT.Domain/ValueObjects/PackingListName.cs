@@ -4,6 +4,8 @@ namespace PackIT.Domain.ValueObjects;
 
 public record PackingListName
 {
+    public string Value { get; }
+
     public PackingListName(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
@@ -14,5 +16,9 @@ public record PackingListName
         Value = value;
     }
 
-    public string Value { get; }
+    public static implicit operator string(PackingListName name) =>
+        name.Value;
+
+    public static implicit operator PackingListName(string name) =>
+        new PackingListName(name);
 }
