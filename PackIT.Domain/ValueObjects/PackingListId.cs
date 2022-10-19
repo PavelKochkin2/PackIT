@@ -15,4 +15,10 @@ public record PackingListId
 
         Value = value;
     }
+
+    public static implicit operator Guid(PackingListId id)
+        => id.Value;
+
+    public static implicit operator PackingListId(Guid id)
+        => new PackingListId(id);
 };
