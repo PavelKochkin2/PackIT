@@ -19,6 +19,6 @@ public record Localization(string City, string Country)
 
     public override string ToString()
     {
-        return $"{City} {Country}";
+        return $"{City}, {Country}";
     }
 }

@@ -1,12 +1,13 @@
 ﻿using PackIT.Domain.Exceptions;
 using PackIT.Domain.ValueObjects;
+using PackIT.Shared.Abstractions.Domain;
 
 namespace PackIT.Domain.Entities;
 
 /// <summary>
 ///     Represents a list of items to pack.
 /// </summary>
-public class PackingList
+public class PackingList : AggregateRoot<Guid>
 {
     public Guid Id { get; private set; }
 

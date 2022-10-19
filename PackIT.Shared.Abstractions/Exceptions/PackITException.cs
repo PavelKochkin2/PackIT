@@ -1,8 +1,8 @@
 ﻿namespace PackIT.Shared.Abstractions.Exceptions;
 
-public abstract class PackITException : Exception
+public abstract class PackItException : Exception
 {
-    protected PackITException(string msg) : base(msg)
+    protected PackItException(string msg) : base(msg)
     {
         
     }
