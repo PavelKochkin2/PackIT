@@ -11,6 +11,8 @@
     <Folder Include="ValueObjects\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Events\" />
+    <Folder Include="Factories\" />
+    <Folder Include="Consts\" />
   </ItemGroup>
 
   <ItemGroup>

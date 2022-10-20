@@ -18,13 +18,11 @@ public class PackingList : AggregateRoot<PackingListId>
 
     private readonly LinkedList<PackingItem> _items = new LinkedList<PackingItem>();
 
-    public PackingList(PackingListId id,
+    private PackingList(PackingListId id,
         PackingListName name,
-        Localization localization, LinkedList<PackingItem> items)
+        Localization localization,
+        LinkedList<PackingItem> items) : this(id, name, localization)
     {
-        Id = id;
-        _name = name;
-        _localization = localization;
         _items = items;
     }
 
@@ -50,6 +48,7 @@ public class PackingList : AggregateRoot<PackingListId>
         AddEvent(new PackingItemAdded(this, item));
     }
 
+
     public void AddItems(IEnumerable<PackingItem> items)
     {
         foreach (var item in items)
@@ -57,6 +56,7 @@ public class PackingList : AggregateRoot<PackingListId>
             AddItem(item);
         }
     }
+
 
     public void PackItem(string itemName)
     {
@@ -79,6 +79,7 @@ public class PackingList : AggregateRoot<PackingListId>
 
         AddEvent(new PackingItemRemoved(this, item));
     }
+
 
     private PackingItem GetItem(string itemName)
     {
