@@ -5,7 +5,7 @@ using PackIT.Domain.ValueObjects;
 
 namespace PackIT.Domain.Factories;
 
-public class PackingListFactory : IPackingListFactory
+internal class PackingListFactory : IPackingListFactory
 {
     private readonly IEnumerable<IPackingItemsPolicy> _policies;
 
@@ -14,13 +14,13 @@ public class PackingListFactory : IPackingListFactory
         _policies = policies;
     }
 
-    public PackingList Create(PackingListId id, PackingListName name, 
+    public PackingList Create(PackingListId id, PackingListName name,
         Localization localization)
     {
         return new PackingList(id, name, localization);
     }
 
-    public PackingList CreateWithDefaultItems(PackingListId id, 
+    public PackingList CreateWithDefaultItems(PackingListId id,
         PackingListName name, TravelDays days, Gender gender,
         Temperature temperature, Localization localization)
     {
@@ -28,5 +28,14 @@ public class PackingListFactory : IPackingListFactory
 
         var applicablePolicies =
             _policies.Where(p => p.IsApplicable(data));
+
+        var items = applicablePolicies
+            .SelectMany(p => p.GenerateItems(data));
+
+        var packingList = Create(id, name, localization);
+
+        packingList.AddItems(items);
+
+        return packingList;
     }
 }
