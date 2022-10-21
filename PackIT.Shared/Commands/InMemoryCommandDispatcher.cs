@@ -15,11 +15,11 @@ internal class InMemoryCommandDispatcher : ICommandDispatcher
     public async Task DispatchAsync<TCommand>(TCommand command)
         where TCommand : class, ICommand
     {
-        using (var scope = _serviceProvider.CreateScope())
-        {
-            var handler = scope.ServiceProvider.GetRequiredService<ICommandHandler<TCommand>>();
+        using var scope = _serviceProvider.CreateScope();
 
-            await handler.HandleAsync(command);
-        }
+        //find a command handler for a given command
+        var handler = scope.ServiceProvider.GetRequiredService<ICommandHandler<TCommand>>();
+        
+        await handler.HandleAsync(command);
     }
 }
