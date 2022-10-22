@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackIT.Api", "PackIT\PackIT.Api.csproj", "{FA77C0EF-816C-418B-A7F9-AFE6C267A55B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Application", "PackIT.Application\PackIT.Application.csproj", "{A5A26888-7CCB-458F-B447-7D87972BB170}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackIT.Application", "PackIT.Application\PackIT.Application.csproj", "{A5A26888-7CCB-458F-B447-7D87972BB170}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Domain", "PackIT.Domain\PackIT.Domain.csproj", "{4E4472FE-E569-4B5F-82B8-78F263709E25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackIT.Domain", "PackIT.Domain\PackIT.Domain.csproj", "{4E4472FE-E569-4B5F-82B8-78F263709E25}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackIT.Infrastructure", "PackIT.Infrastructure\PackIT.Infrastructure.csproj", "{4D224EDB-0282-4839-8584-FEDF4BEA843F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Infrastructure", "PackIT.Infrastructure\PackIT.Infrastructure.csproj", "{4D224EDB-0282-4839-8584-FEDF4BEA843F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{6265E23C-C230-4EDB-B0FC-6B9A5DF52354}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackIT.Shared", "PackIT.Shared\PackIT.Shared.csproj", "{5A8EA67B-52A0-489A-A768-B7B7819FA05B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Shared", "PackIT.Shared\PackIT.Shared.csproj", "{5A8EA67B-52A0-489A-A768-B7B7819FA05B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackIT.Shared.Abstractions", "PackIT.Shared.Abstractions\PackIT.Shared.Abstractions.csproj", "{7E050DE2-A9AA-4FCB-9285-8540A86E7D45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Shared.Abstractions", "PackIT.Shared.Abstractions\PackIT.Shared.Abstractions.csproj", "{7E050DE2-A9AA-4FCB-9285-8540A86E7D45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackIT.Api", "PackIT.Api\PackIT.Api.csproj", "{89CC1426-DC72-403F-ABC1-00DD21DD89BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FA77C0EF-816C-418B-A7F9-AFE6C267A55B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA77C0EF-816C-418B-A7F9-AFE6C267A55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA77C0EF-816C-418B-A7F9-AFE6C267A55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA77C0EF-816C-418B-A7F9-AFE6C267A55B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A5A26888-7CCB-458F-B447-7D87972BB170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A5A26888-7CCB-458F-B447-7D87972BB170}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5A26888-7CCB-458F-B447-7D87972BB170}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,6 +43,10 @@ Global
 		{7E050DE2-A9AA-4FCB-9285-8540A86E7D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E050DE2-A9AA-4FCB-9285-8540A86E7D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E050DE2-A9AA-4FCB-9285-8540A86E7D45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89CC1426-DC72-403F-ABC1-00DD21DD89BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89CC1426-DC72-403F-ABC1-00DD21DD89BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89CC1426-DC72-403F-ABC1-00DD21DD89BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89CC1426-DC72-403F-ABC1-00DD21DD89BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
