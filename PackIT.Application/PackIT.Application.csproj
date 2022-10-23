@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PackIT.Domain\PackIT.Domain.csproj" />
     <ProjectReference Include="..\PackIT.Shared\PackIT.Shared.csproj" />
   </ItemGroup>
 
