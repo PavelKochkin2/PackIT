@@ -15,4 +15,8 @@
     <ProjectReference Include="..\PackIT.Shared\PackIT.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\Handlers\" />
+  </ItemGroup>
+
 </Project>
