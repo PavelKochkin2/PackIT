@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.Design;
 using Microsoft.Extensions.DependencyInjection;
-using PackIT.;
+using PackIT.Shared;
 
 namespace PackIT.Application;
 
