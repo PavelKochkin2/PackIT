@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Application", "PackIT.Application\PackIT.Application.csproj", "{A5A26888-7CCB-458F-B447-7D87972BB170}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A8EA67B-52A0-489A-A768-B7B7819FA05B} = {5A8EA67B-52A0-489A-A768-B7B7819FA05B}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Domain", "PackIT.Domain\PackIT.Domain.csproj", "{4E4472FE-E569-4B5F-82B8-78F263709E25}"
 EndProject
@@ -15,7 +18,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Shared", "PackIT.Sha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Shared.Abstractions", "PackIT.Shared.Abstractions\PackIT.Shared.Abstractions.csproj", "{7E050DE2-A9AA-4FCB-9285-8540A86E7D45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackIT.Api", "PackIT.Api\PackIT.Api.csproj", "{89CC1426-DC72-403F-ABC1-00DD21DD89BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackIT.Api", "PackIT.Api\PackIT.Api.csproj", "{89CC1426-DC72-403F-ABC1-00DD21DD89BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
