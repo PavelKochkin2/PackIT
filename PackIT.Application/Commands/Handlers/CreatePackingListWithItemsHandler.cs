@@ -1,6 +1,8 @@
-﻿using PackIT.Application.Services;
+﻿using PackIT.Application.Exceptions;
+using PackIT.Application.Services;
 using PackIT.Domain.Factories;
 using PackIT.Domain.Repositories;
+using PackIT.Domain.ValueObjects;
 using PackIT.Shared.Abstractions.Commands;
 
 namespace PackIT.Application.Commands.Handlers;
@@ -11,18 +13,43 @@ public class CreatePackingListWithItemsHandler :
     private readonly IPackingListRepository _repository;
     private readonly IPackingListFactory _factory;
     private readonly IPackingListReadService _readService;
+    private readonly IWeatherService _weatherService;
 
-    public CreatePackingListWithItemsHandler(IPackingListRepository repository, IPackingListFactory factory, IPackingListReadService readService)
+    public CreatePackingListWithItemsHandler(IPackingListRepository repository,
+        IPackingListFactory factory,
+        IPackingListReadService readService,
+        IWeatherService weatherService)
     {
         _repository = repository;
         _factory = factory;
         _readService = readService;
+        _weatherService = weatherService;
     }
 
-    public Task HandleAsync(CreatePackingListWithItems command)
+    public async Task HandleAsync(CreatePackingListWithItems command)
     {
-        //check if the list exists in db(we don't allow name duplicates)
+        var (id, name, days, gender, localizationWriteModel) = command;
 
-        return Task.CompletedTask;
+        //check if the list exists in db(we don't allow name duplicates)
+        if (await _readService.ExistsByNameAsync(name))
+        {
+            throw new PackingListAlreadyExistsException(name);
+        }
+
+        var localization = new Localization(localizationWriteModel.City,
+            localizationWriteModel.Country);
+
+        var weather = await _weatherService.GetWeatherAsync(localization);
+
+        if (weather is null)
+        {
+            throw new MissingLocalizationWeatherException(localization);
+        }
+
+        var packingList = _factory.CreateWithDefaultItems(id, name, days, gender,
+            weather.Temperature, localization);
+
+        await _repository.AddAsync(packingList);
+
     }
 }
