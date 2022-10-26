@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Handlers\" />
     <Folder Include="DTO\External\" />
     <Folder Include="Services\" />
     <Folder Include="Exceptions\" />
