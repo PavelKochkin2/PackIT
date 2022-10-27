@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Domain\" />
     <Folder Include="Commands\" />
+    <Folder Include="Queries\" />
   </ItemGroup>
 
 </Project>
