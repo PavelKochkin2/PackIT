@@ -1,8 +1,9 @@
 ﻿using PackIT.Application.DTO;
+using PackIT.Application.Queries;
 using PackIT.Domain.Repositories;
 using PackIT.Shared.Abstractions.Queries;
 
-namespace PackIT.Application.Queries.Handlers;
+namespace PackIT.Infrastructure.Queries.Handlers;
 
 public class GetPackingListHandler : 
     IQueryHandler<GetPackingList, PackingListDto>
