@@ -3,7 +3,7 @@ using PackIT.Shared.Abstractions.Queries;
 
 namespace PackIT.Application.Queries;
 
-public class GetPackingList : IQuery<PackingListDto>
+public class SearchPackingLists : IQuery<IEnumerable<PackingListDto>>
 {
-    public Guid Id { get; set; }
+    public string SearchPhrase { get; set; }
 }
