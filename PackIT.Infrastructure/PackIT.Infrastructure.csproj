@@ -15,4 +15,9 @@
     <ProjectReference Include="..\PackIT.Application\PackIT.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="EF\Contexts\" />
+    <Folder Include="EF\Config\" />
+  </ItemGroup>
+
 </Project>

@@ -1,10 +1,12 @@
 using PackIT.Application;
+using PackIT.Infrastructure.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddApplication();
+builder.Services.AddInfrastructure();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

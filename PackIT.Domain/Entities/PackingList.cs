@@ -26,6 +26,11 @@ public class PackingList : AggregateRoot<PackingListId>
         _items = items;
     }
 
+    /// <summary>
+    ///  Added for EF
+    /// </summary>
+    private PackingList(){}
+
     internal PackingList(PackingListId id,
         PackingListName name,
         Localization localization)
