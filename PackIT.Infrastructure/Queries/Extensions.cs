@@ -1,13 +1,16 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using PackIT.Shared.Queries;
+﻿using PackIT.Application.DTO;
+using PackIT.Domain.ValueObjects;
+using PackIT.Infrastructure.EF.Models;
 
 namespace PackIT.Infrastructure.Queries;
 
-public static class Extensions
+internal class Extensions
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+    public static PackingListDto ToDto(this PackingListReadModel readModel)=>
+    new PackingListDto()
     {
-        services.AddQueries();
-        return services;
+        Id = readModel.Id,
+        Name = readModel.Name,
+        Localization = new LocalizationDto(readModel.Localization)
     }
 }
