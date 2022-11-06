@@ -19,6 +19,8 @@
     <Folder Include="EF\Contexts\" />
     <Folder Include="EF\Config\" />
     <Folder Include="EF\Options\" />
+    <Folder Include="EF\Services\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
