@@ -9,7 +9,7 @@ internal class WriteDbContext : DbContext
 {
     public DbSet<PackingList> PackingLists { get; set; }
 
-    public WriteDbContext(DbContextOptions<WriteDbContext> options) : base(options)
+    public WriteDbContext(DbContextOptions options) : base(options)
     {
     }
 

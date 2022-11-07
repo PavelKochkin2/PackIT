@@ -8,7 +8,7 @@ internal class ReadDbContext : DbContext
 {
     public DbSet<PackingListReadModel> PackingLists { get; set; }
 
-    public ReadDbContext(DbContextOptions<ReadDbContext> options ) : base( options )
+    public ReadDbContext(DbContextOptions<ReadDbContext> options) : base(options)
     {
     }
 

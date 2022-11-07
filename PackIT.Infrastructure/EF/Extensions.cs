@@ -19,7 +19,7 @@ internal static class Extensions
         services.AddScoped<IPackingListReadService, PostgresPackingListReadService>();
 
         var options = configuration.GetOptions<PostgresOptions>("Postgres");
-
+        //services.AddEntityFrameworkInMemoryDatabase();
         AddDbContexts(services, options.ConnectionString);
 
         return services;
@@ -28,9 +28,9 @@ internal static class Extensions
     private static void AddDbContexts(IServiceCollection services, string connectionString)
     {
         services.AddDbContext<ReadDbContext>(ctx =>
-            ctx.UseNpgsql(connectionString));
+            ctx.UseInMemoryDatabase("Pahan"));
 
         services.AddDbContext<WriteDbContext>(ctx =>
-            ctx.UseNpgsql(connectionString));
+            ctx.UseInMemoryDatabase("Pahan"));
     }
 }
