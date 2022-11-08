@@ -18,5 +18,9 @@
     <ProjectReference Include="..\PackIT.Infrastructure\PackIT.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controller\" />
+  </ItemGroup>
+
 </Project>
 
