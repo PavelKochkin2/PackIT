@@ -1,12 +1,13 @@
 using PackIT.Application;
 using PackIT.Infrastructure;
+using PackIT.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddApplication();
-
+builder.Services.AddShared();
 var app = builder.Build();
 
 builder.Services.AddInfrastructure(app.Configuration);
