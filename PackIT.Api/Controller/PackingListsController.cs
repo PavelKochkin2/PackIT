@@ -6,9 +6,7 @@ using PackIT.Shared.Abstractions.Queries;
 
 namespace PackIT.Api.Controller;
 
-[ApiController]
-[Route("api/[controller]")]
-public class PackingListsController : ControllerBase
+public class PackingListsController : BaseController
 {
     private readonly ICommandDispatcher _commandDispatcher;
     private readonly IQueryDispatcher _queryDispatcher;
@@ -25,12 +23,7 @@ public class PackingListsController : ControllerBase
     {
         var result = await _queryDispatcher.QueryAsync(query);
 
-        if (result is null)
-        {
-            return NotFound();
-        }
-
-        return Ok(result);
+        return OkOrNotFound(result);
     }
 
 
@@ -40,11 +33,6 @@ public class PackingListsController : ControllerBase
     {
         var result = await _queryDispatcher.QueryAsync(query);
 
-        if (result is null)
-        {
-            return NotFound();
-        }
-
-        return Ok(result);
+        return OkOrNotFound(result);
     }
 }
